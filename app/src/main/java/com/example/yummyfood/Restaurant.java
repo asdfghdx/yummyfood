@@ -2,6 +2,7 @@ package com.example.yummyfood;
 
 import java.util.ArrayList;
 
+//Creating class for Restaurant along with relevant attributes
 public class Restaurant {
     private String name;
     private String location;
@@ -16,6 +17,7 @@ public class Restaurant {
 
     }
 
+    //Constructor for restaurant
     public Restaurant(String name, String location, String cuisine, String rating, String description, String opening, String closing, String number) {
         this.name = name;
         this.location = location;
@@ -27,6 +29,8 @@ public class Restaurant {
         this.number = number;
     }
 
+
+    //Getters and setters for attributes
     public String getName() {
         return name;
     }

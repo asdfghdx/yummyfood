@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 public class DetailActivity extends AppCompatActivity{
 
+    //Creating relevant TextViews to be used in detail activity
     private Restaurant mRestaurant;
     private TextView mName;
     private TextView mLocation;
@@ -22,11 +23,13 @@ public class DetailActivity extends AppCompatActivity{
     private TextView mClosing;
     private TextView mNumber;
 
+    //onCreateMethod
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
+        //Linking the XML components by ID
         mName = findViewById(R.id.tvName);
         mLocation = findViewById(R.id.tvLocation);
         mCuisine = findViewById(R.id.tvCuisine);
@@ -36,9 +39,11 @@ public class DetailActivity extends AppCompatActivity{
         mClosing = findViewById(R.id.tvClosing);
         mNumber = findViewById(R.id.tvNumber);
 
+
         Intent intent = getIntent();
         int position = intent.getIntExtra(MainActivity.MESSAGE, 0 );
 
+        //Setting the textviews XML components to reflect entry in array
         mRestaurant = Restaurant.getRestaurants().get(position);
         setTitle(mRestaurant.getName());
         mName.setText(mRestaurant.getName());

@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Setting the recyclerview to utilise the layout created
         mRecyclerview = findViewById(R.id.rvList);
         mRecyclerview.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
@@ -30,11 +31,11 @@ public class MainActivity extends AppCompatActivity {
                 launchDetailActivity(position);
             }
         };
-
+        //Setting adapter to the created adapter
         mAdapter = new RestaurantAdapter(Restaurant.getRestaurants(), listener);
         mRecyclerview.setAdapter(mAdapter);
     }
-
+    //Intent to start detailed activity
     private void launchDetailActivity(int position){
         Intent intent = new Intent(this, DetailActivity.class);
         intent.putExtra(MESSAGE, position);
